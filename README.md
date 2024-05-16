@@ -6,15 +6,16 @@ Custom HAL drivers implementation demo
 
 This test project demonstrates the use of custom drivers written for a flexible HAL layer. The microcontroller used for the core of the design is the [Seeeduino Xiao](https://wiki.seeedstudio.com/Seeeduino-XIAO/), and the devices under test (DUT) are:
 
-* LED
-* Switch
-* EEPROM
-* RTC
-* SSD1306
-* 7-Segment Display
-* GPIO expander (I2C)
-* GPIO expander (SPI)
-* Shift register
+* [LED](https://github.com/johnmgreenwell/led)
+* [Switch](https://github.com/johnmgreenwell/switch)
+* [EEPROM](https://github.com/johnmgreenwell/at24cxx)
+* [RTC](https://github.com/johnmgreenwell/ds3232)
+* [Temp/humidity sensor](https://github.com/johnmgreenwell/htu21d)
+* [SSD1306](https://github.com/johnmgreenwell/ssd1306)
+* [7-Segment display](https://github.com/johnmgreenwell/micro7seg)
+* [GPIO expander (I2C)](https://github.com/johnmgreenwell/mcp23008)
+* [GPIO expander (SPI)](https://github.com/johnmgreenwell/mcp23s08)
+* [Shift register](https://github.com/johnmgreenwell/shift-register)
 
 ![Example Breadboard](images/custom-drivers-demo_test.png)
 
@@ -22,7 +23,7 @@ Each of the drivers is tested by direct interface or as a subset of another driv
 
 ## Usage
 
-This project may be build using PlatformIO as provided.
+This project may be build using PlatformIO as provided, with supporting configuration files provided. Each driver is imported as a library dependency, compatible with PlatformIO arrangement. 
 
 ## Schematic
 
