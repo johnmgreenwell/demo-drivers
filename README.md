@@ -4,7 +4,7 @@ Custom HAL drivers implementation demo
 
 ## Overview
 
-This test project demonstrates the use of custom drivers written for a flexible HAL layer. The microcontroller used for the core of the design is the [Seeeduino Xiao](https://wiki.seeedstudio.com/Seeeduino-XIAO/), and the devices under test (DUT) are:
+This test project demonstrates the use of custom drivers written for a flexible HAL layer. The [Seeeduino Xiao](https://wiki.seeedstudio.com/Seeeduino-XIAO/) is the microcontroller used as an example platform, and the drivers/devices under test (DUT) are:
 
 * [LED](https://github.com/johnmgreenwell/led)
 * [Switch](https://github.com/johnmgreenwell/switch)
