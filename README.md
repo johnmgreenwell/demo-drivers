@@ -19,11 +19,11 @@ This test project demonstrates the use of custom drivers written for a flexible 
 
 ![Example Breadboard](images/custom-drivers-demo_test.png)
 
-Each of the drivers is tested by direct interface or as a subset of another driver. Though the tests are not exhaustive for each driver, they do demonstrate a practical application of each.
+Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as the intent is to demonstrate a practical application of each.
 
 ## Usage
 
-This project may be build using PlatformIO as provided, with supporting configuration files provided. Each driver is imported as a library dependency, compatible with PlatformIO arrangement. 
+This project may be build using PlatformIO as provided, with supporting configuration files provided. Each driver is imported as a library dependency, compatible with a [PlatformIO](https://platformio.org/) configuration arrangement. 
 
 ## Schematic
 
