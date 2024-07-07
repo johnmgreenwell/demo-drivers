@@ -1,0 +1,30 @@
+[submodule "src/lib/at24cxx"]
+	path = src/lib/at24cxx
+	url = https://github.com/johnmgreenwell/at24cxx.git
+[submodule "src/lib/ds3232"]
+	path = src/lib/ds3232
+	url = https://github.com/johnmgreenwell/ds3232.git
+[submodule "src/lib/htu21d"]
+	path = src/lib/htu21d
+	url = https://github.com/johnmgreenwell/htu21d.git
+[submodule "src/lib/led"]
+	path = src/lib/led
+	url = https://github.com/johnmgreenwell/led.git
+[submodule "src/lib/mcp23s08"]
+	path = src/lib/mcp23s08
+	url = https://github.com/johnmgreenwell/mcp23s08.git
+[submodule "src/lib/mcp23008"]
+	path = src/lib/mcp23008
+	url = https://github.com/johnmgreenwell/mcp23008.git
+[submodule "src/lib/micro7seg"]
+	path = src/lib/micro7seg
+	url = https://github.com/johnmgreenwell/micro7seg.git
+[submodule "src/lib/shift-register"]
+	path = src/lib/shift-register
+	url = https://github.com/johnmgreenwell/shift-register.git
+[submodule "src/lib/ssd1306"]
+	path = src/lib/ssd1306
+	url = https://github.com/johnmgreenwell/ssd1306.git
+[submodule "src/lib/switch"]
+	path = src/lib/switch
+	url = https://github.com/johnmgreenwell/switch.git

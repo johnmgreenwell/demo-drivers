@@ -9,5 +9,4 @@ assets/local
 src/.pio
 src/.vscode
 src/include/README
-src/lib
 src/test
