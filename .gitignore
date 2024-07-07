@@ -1,7 +1,10 @@
-# ignore all logs
+# Ignore all logs
 *.log
 
-# Ignore miscellaneous files in this directory
+# Ignore cad backups
+cad/*-backups
+
+# Ignore miscellaneous files
 assets/local
 src/.pio
 src/.vscode
