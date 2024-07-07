@@ -19,7 +19,7 @@ This test project demonstrates the use of custom drivers written for a flexible 
 
 Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as the intent is to demonstrate a practical application of each.
 
-![Example Breadboard](images/custom-drivers-demo_test.png)
+![Demo Drivers Breadboard Photo](images/demo-drivers-breadboard.jpg)
 
 Each component is successfully controlled by its respective driver.
 
