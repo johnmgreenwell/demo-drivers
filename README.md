@@ -4,7 +4,7 @@ Custom HAL drivers implementation demo
 
 ## Overview
 
-This test project demonstrates the use of custom drivers written for a flexible HAL layer. The [Seeeduino Xiao](https://wiki.seeedstudio.com/Seeeduino-XIAO/) is the microcontroller used as an example platform, and the drivers/devices under test (DUT) are:
+This test project demonstrates the use of custom drivers written for a flexible HAL layer. The [Seeeduino Xiao microcontroller](https://wiki.seeedstudio.com/Seeeduino-XIAO/) is used as an example platform, while the drivers/devices under test (DUT) are:
 
 * [LED](https://github.com/johnmgreenwell/led)
 * [Switch](https://github.com/johnmgreenwell/switch)
@@ -17,19 +17,21 @@ This test project demonstrates the use of custom drivers written for a flexible 
 * [GPIO expander (SPI)](https://github.com/johnmgreenwell/mcp23s08)
 * [Shift register](https://github.com/johnmgreenwell/shift-register)
 
+Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as the intent is to demonstrate a practical application of each.
+
 ![Example Breadboard](images/custom-drivers-demo_test.png)
 
-Each of the drivers is tested by direct interface or as a subset of another driver. Though the tests are not exhaustive for each driver, they do demonstrate a practical application of each.
+Each component is successfully controlled by its respective driver.
 
 ## Usage
 
-This project may be build using PlatformIO as provided, with supporting configuration files provided. Each driver is imported as a library dependency, compatible with PlatformIO arrangement. 
+This project may be built using PlatformIO with supporting configuration files as provided. Each driver is imported as a library dependency, compatible with a [PlatformIO](https://platformio.org/) configuration arrangement. Alternatively, this repo and the requisite dependencies for the Seeeduino Xiao Arduino framework may be used by a separate or custom build system (such as the Arduino IDE itself).
 
 ## Schematic
 
-The overall schematic for the test setup, along with its associated CAD files are included as composed in KiCad 8.
+The overall schematic for the test setup and associated CAD files are included as composed in [KiCad 8](https://www.kicad.org/blog/2024/03/KiCad-8.0.1-Release/).
 
-![Test Setup Schematic](images/custom-drivers-demo_schematic.png)
+![Demo Drivers Schematic](images/demo-drivers-schematic.png)
 
 ## License
 
