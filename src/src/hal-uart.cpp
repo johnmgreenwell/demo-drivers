@@ -40,15 +40,6 @@ uint32_t UART::write(const char *str, uint32_t length) const
 {
     uint32_t retval = 0;
 
-    // while (length > 32)
-    // {
-    //     Serial.write((str + retval), 32);
-    //     retval += 32;
-    //     length -= 32;
-    // }
-    
-    // retval += Serial.write((str + retval), length);
-
     for (retval = 0; retval < length; ++retval)
     {
         Serial.write(str[retval]);
@@ -62,17 +53,6 @@ uint32_t UART::write(const char *str, uint32_t length) const
 uint32_t UART::write(char *str, uint32_t length) const
 {
     uint32_t retval = 0;
-
-    // while (length > 32)
-    // {
-    //     Serial.flush();
-    //     delayMicroseconds(10);
-    //     Serial.write((&str[retval]), 32);
-    //     retval += 32;
-    //     length -= 32;
-    // }
-    
-    // retval += Serial.write((str + retval), length);
 
     for (retval = 0; retval < length; ++retval)
     {

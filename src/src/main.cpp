@@ -1,7 +1,7 @@
 //--------------------------------------------------------------------------------------------------------------------
 // Name        : main.cpp
-// Purpose     : Test application project
-// Description : This main source file supports testing of a lib/module refacting project.
+// Purpose     : Demo Drivers Test Project
+// Description : This main source file supports test demonstration of custom drivers.
 // Platform    : Multiple
 // Framework   : Arduino
 // Language    : C++
@@ -21,10 +21,10 @@
 #include "ssd1306.h"
 
 // Baud and timer settings
-const uint32_t SERIAL_BAUDRATE     = 1000000;
-const uint32_t I2C_BAUDRATE        = 100000;
-const uint32_t SPI_BAUDRATE        = 1000000;
-const uint32_t TIMER_PERIOD_US     = 2500;
+const uint32_t SERIAL_BAUDRATE = 1000000;
+const uint32_t I2C_BAUDRATE    = 100000;
+const uint32_t SPI_BAUDRATE    = 1000000;
+const uint32_t TIMER_PERIOD_US = 2500;
 
 // OLED settings
 const uint8_t  OLED_SCREEN_WIDTH   = 128;  // OLED width in pixels
@@ -46,12 +46,12 @@ const char *monthName[12] =
 };
 
 // Global variables
-char data[256];
+char         data[256];
 tmElements_t tm;
-time_t current_time;
-time_t previous_time;
+time_t       current_time;
+time_t       previous_time;
 
-// HAL-mediated utilities
+// HAL-mediated utility
 HAL::Timer timer;
 
 // Peripheral buses
@@ -249,31 +249,52 @@ int main()
     return 0;
 }
 
+// Convert time string to integer values
 bool extractTime(const char *str)
 {
   int Hour, Min, Sec;
 
-  if (sscanf(str, "%d:%d:%d", &Hour, &Min, &Sec) != 3) return false;
+  if (sscanf(str, "%d:%d:%d", &Hour, &Min, &Sec) != 3)
+  {
+    return false;
+  }
+
   tm.Hour = Hour;
   tm.Minute = Min;
   tm.Second = Sec;
+
   return true;
 }
 
+// Convert date to values
 bool extractDate(const char *str)
 {
   char Month[12];
   int Day, Year;
   uint8_t monthIndex;
 
-  if (sscanf(str, "%s %d %d", Month, &Day, &Year) != 3) return false;
-  for (monthIndex = 0; monthIndex < 12; monthIndex++) {
-    if (strcmp(Month, monthName[monthIndex]) == 0) break;
+  if (sscanf(str, "%s %d %d", Month, &Day, &Year) != 3)
+  {
+    return false;
   }
-  if (monthIndex >= 12) return false;
+
+  for (monthIndex = 0; monthIndex < 12; monthIndex++)
+  {
+    if (strcmp(Month, monthName[monthIndex]) == 0)
+    {
+        break;
+    }
+  }
+
+  if (monthIndex >= 12)
+  {
+    return false;
+  }
+
   tm.Day = Day;
   tm.Month = monthIndex + 1;
   tm.Year = CalendarYrToTm(Year);
+
   return true;
 }
 
@@ -282,16 +303,21 @@ bool extractDate(const char *str)
 void printInteger(int val, char delim)
 {
     if (val < 10)
+    {
         display.print("0");
+    }
 
     display.print((int)val);
 
     if (delim > 0)
+    {
         display.print(delim);
+    }
 
     return;
 }
 
+// Print date to display
 void printDate(time_t t)
 {
     printInteger(day(t), 0);
@@ -301,6 +327,7 @@ void printDate(time_t t)
     display.print((int)(year(t)));
 }
 
+// Print time to display
 void printTime(time_t t)
 {
     printInteger(hour(t), ':');
@@ -308,11 +335,13 @@ void printTime(time_t t)
     printInteger(second(t), ' ');
 }
 
+// RTC refresh synchronization
 time_t getTime()
 {
     return rtc.get();
 }
 
+// Timer expiration callback
 void timerISR()
 {
     static bool update_button = false;
