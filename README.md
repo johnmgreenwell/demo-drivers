@@ -17,15 +17,15 @@ This test project demonstrates the use of custom drivers written for a flexible 
 * [GPIO expander (SPI)](https://github.com/johnmgreenwell/mcp23s08)
 * [Shift register](https://github.com/johnmgreenwell/shift-register)
 
-Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as the intent is to demonstrate a practical application of each.
+Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as it is sufficient to demonstrate a practical application of each.
 
 ![Demo Drivers Breadboard Photo](images/demo-drivers-breadboard.jpg)
 
-Each component is successfully controlled by its respective driver.
+Each component operates as intended as it is controlled by its respective driver.
 
 ## Usage
 
-This project may be built using PlatformIO with supporting configuration files as provided. Each driver is imported as a library dependency, compatible with a [PlatformIO](https://platformio.org/) configuration arrangement. Alternatively, this repo and the requisite dependencies for the Seeeduino Xiao Arduino framework may be used by a separate or custom build system (such as the Arduino IDE itself).
+This project may be built using PlatformIO with supporting configuration files as provided. Each driver is imported as a library dependency, compatible with a [PlatformIO](https://platformio.org/) configuration arrangement. Alternatively, this repo and the requisite dependencies for the Seeeduino Xiao Arduino framework may be used by a separate or custom build system.
 
 ## Schematic
 
