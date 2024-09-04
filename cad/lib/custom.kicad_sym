@@ -696,8 +696,8 @@
 				)
 			)
 		)
-		(property "Value" ""
-			(at 0 0 0)
+		(property "Value" "seeeduino_xiao"
+			(at 11.938 -20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1119,8 +1119,8 @@
 				)
 			)
 		)
-		(property "Value" ""
-			(at -1.27 0 0)
+		(property "Value" "ssd1306"
+			(at 7.366 -7.874 0)
 			(effects
 				(font
 					(size 1.27 1.27)

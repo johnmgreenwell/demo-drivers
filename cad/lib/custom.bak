@@ -419,8 +419,8 @@
 				)
 			)
 		)
-		(property "Value" ""
-			(at 0 0 0)
+		(property "Value" "display_7-seg_bubble"
+			(at 5.08 -15.494 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -464,14 +464,6 @@
 				)
 				(fill
 					(type background)
-				)
-			)
-			(text "Micro_7-Seg"
-				(at 6.35 -15.494 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(pin open_emitter line
@@ -704,8 +696,8 @@
 				)
 			)
 		)
-		(property "Value" ""
-			(at 0 0 0)
+		(property "Value" "seeeduino_xiao"
+			(at 11.938 -20.574 0)
 			(effects
 				(font
 					(size 1.27 1.27)

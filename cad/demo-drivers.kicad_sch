@@ -2712,8 +2712,8 @@
 					)
 				)
 			)
-			(property "Value" ""
-				(at 0 0 0)
+			(property "Value" "seeeduino_xiao"
+				(at 11.938 -20.574 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3135,8 +3135,8 @@
 					)
 				)
 			)
-			(property "Value" ""
-				(at -1.27 0 0)
+			(property "Value" "ssd1306"
+				(at 7.366 -7.874 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -6963,10 +6963,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1259ddc3-87d2-4f61-a810-79b961c4b8b3")
 		(property "Reference" "U5"
-			(at 46.6441 113.03 0)
+			(at 50.8 116.586 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6975,7 +6974,7 @@
 			)
 		)
 		(property "Value" "MCP23008-xP"
-			(at 46.6441 115.57 0)
+			(at 46.482 145.542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9960,7 +9959,7 @@
 		(dnp no)
 		(uuid "a4f5b156-81e6-486d-a5c2-80120b25d66d")
 		(property "Reference" "U7"
-			(at 77.47 78.232 0)
+			(at 77.47 35.052 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9968,8 +9967,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
-			(at 68.2341 80.01 0)
+		(property "Value" "seeeduino_xiao"
+			(at 68.834 77.978 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11228,7 +11227,7 @@
 		(dnp no)
 		(uuid "da81c81f-ce2f-462c-8622-3d9b7ee3d6dd")
 		(property "Reference" "U8"
-			(at 194.818 70.612 0)
+			(at 194.31 50.038 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11236,8 +11235,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
-			(at 199.39 61.595 0)
+		(property "Value" "ssd1306"
+			(at 190.246 70.358 0)
 			(effects
 				(font
 					(size 1.27 1.27)
