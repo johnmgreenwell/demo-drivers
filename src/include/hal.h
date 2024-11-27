@@ -24,16 +24,6 @@
 //
 //               See source file hal.cpp for more implementation-specific dependencies.
 //
-//               TODO: anything c++ that could make this more elegant
-//               TODO: consider expanding scope of SPI
-//               TODO: expand IO expander functionality e.g. attachInterrupt()
-//               TODO: expand HAL GPIO to permit interrupt
-//               TODO: update led driver, add GPIO_ prefix to const values in HAL/drivers
-//               TODO: consider stripping bus init from the drivers
-//               TODO: add null checks in I2C functions, overload simpler ones
-//               TODO: adjust all repos to use buses by reference, note init is outside of obj
-//               TODO: consider whether bus objects can be const
-//
 // Language    : C++
 // Platform    : Portable
 // Framework   : Portable
