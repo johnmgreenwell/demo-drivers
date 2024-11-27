@@ -46,8 +46,6 @@ uint32_t UART::write(const char *str, uint32_t length) const
     }
 
     return retval;
-
-    return retval;
 }
 
 uint32_t UART::write(char *str, uint32_t length) const
