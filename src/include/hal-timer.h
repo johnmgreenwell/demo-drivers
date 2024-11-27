@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------------------------
 // Name        : hal-timer.h
-// Purpose     : Hardware Abstraction Layer Timer Port
+// Purpose     : Hardware Abstraction Layer Timer
 // Description : 
 //               This multi-instance HAL Timer class definition contributes to the HAL of a larger overall project.
 //
