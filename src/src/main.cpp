@@ -77,6 +77,7 @@ extern "C" void __libc_init_array(void);
 void initVariant() __attribute__((weak));
 void initVariant() {}
 
+// Function prototypes
 bool extractTime(const char *str);
 bool extractDate(const char *str);
 void printInteger(int val, char delim);
@@ -84,6 +85,7 @@ void printDate(time_t t);
 void printTime(time_t t);
 time_t getTime();
 void timerISR();
+void getTimeFromCompiler();
 
 int main()
 {
@@ -115,13 +117,7 @@ int main()
     setSyncProvider(getTime);
 
     // Apply time and date from compiler
-    if (extractDate(__DATE__))
-    {
-        if (extractTime(__TIME__))
-        {
-            rtc.write(tm);
-        }
-    }
+    getTimeFromCompiler();
 
     HAL::delay_ms(10);
 
@@ -354,6 +350,17 @@ void timerISR()
     }
 
     update_button = !update_button;
+}
+
+void getTimeFromCompiler()
+{
+    if (extractDate(__DATE__))
+    {
+        if (extractTime(__TIME__))
+        {
+            rtc.write(tm);
+        }
+    }
 }
 
 // EOF
