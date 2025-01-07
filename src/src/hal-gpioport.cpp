@@ -46,7 +46,10 @@ bool GPIOPort::pinMode(uint8_t pin, uint8_t mode) const
 void GPIOPort::portMode(uint8_t mode) const
 {
     if (8 == _pins[0])
-        i2c_io.write(PeripheralIO::MCP23008_IODIR, 0xF0);
+        if (GPIO_OUTPUT== mode)
+            i2c_io.write(PeripheralIO::MCP23008_IODIR, 0xF0);
+        else if (GPIO_INPUT == mode)
+            i2c_io.write(PeripheralIO::MCP23008_IODIR, 0xFF);
 }
 
 bool GPIOPort::digitalWrite(uint8_t pin, uint8_t val) const
