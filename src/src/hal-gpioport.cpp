@@ -13,6 +13,9 @@
 #include "shift-register.h"
 #include "mcp23008.h"
 
+// TODO: add pull-up resistor mode option
+// TODO: comprehensive functionality beyond what is needed for application
+
 namespace HAL
 {
 
@@ -34,22 +37,40 @@ GPIOPort::GPIOPort(const uint8_t* pins, uint8_t len)
 
 void GPIOPort::init() const
 {
-    if (0 == _pins[0])
+    if (0 == _pins[0]) // Only the shift register requires initialization
         sreg.init();
 }
 
 bool GPIOPort::pinMode(uint8_t pin, uint8_t mode) const
 {
-    return true; // Function not used for this application
+    uint8_t iodir_value = 0xFF;
+
+    if (8 == _pins[0]) // Only the IO expander can set pin modes
+    {
+        if (GPIO_OUTPUT== mode)
+        {
+            iodir_value = (0xF0 | (i2c_io.read(PeripheralIO::MCP23008_IODIR) & ~(pin << 1)));
+        }
+        else if (GPIO_INPUT == mode)
+        {
+            iodir_value = (0xF0 | (i2c_io.read(PeripheralIO::MCP23008_IODIR) | (pin << 1)));
+        }
+
+        i2c_io.write(PeripheralIO::MCP23008_IODIR, iodir_value);
+    }
+
+    return true;
 }
 
 void GPIOPort::portMode(uint8_t mode) const
 {
     if (8 == _pins[0])
+    {
         if (GPIO_OUTPUT== mode)
             i2c_io.write(PeripheralIO::MCP23008_IODIR, 0xF0);
         else if (GPIO_INPUT == mode)
             i2c_io.write(PeripheralIO::MCP23008_IODIR, 0xFF);
+    }
 }
 
 bool GPIOPort::digitalWrite(uint8_t pin, uint8_t val) const
@@ -72,7 +93,7 @@ void GPIOPort::write(uint32_t val) const
 
 uint32_t GPIOPort::read() const
 {
-    return true; // Function not used for this application
+    return (uint32_t)i2c_io.read();
 }
 
 }
