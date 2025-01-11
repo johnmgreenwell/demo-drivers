@@ -39,7 +39,7 @@ class I2C
          * @param addr Target I2C address
          * @param data Data buffer from which to write 
          * @param len Length of data to write
-         * @return Flexible return value from I2C write function
+         * @return Zero for success, nonzero for error
         */
         uint8_t write(uint8_t addr, uint8_t * data, uint32_t len);
 
@@ -47,7 +47,7 @@ class I2C
          * @brief Perform an I2C write of a single byte
          * @param addr Target I2C address
          * @param data The data value to write
-         * @return Flexible return value from I2C write function
+         * @return Zero for success, nonzero for error
         */
         uint8_t write(uint8_t addr, uint8_t data);
 
@@ -56,7 +56,7 @@ class I2C
          * @param addr Target I2C address
          * @param reg The register value to write
          * @param data The data value to write
-         * @return Flexible return value from I2C write function
+         * @return Zero for success, nonzero for error
         */
         uint8_t write(uint8_t addr, uint8_t reg, uint8_t data);
 
@@ -66,7 +66,7 @@ class I2C
          * @param reg The uint8_t register value to write
          * @param data Data buffer from which data is written
          * @param len Length of data to write from buffer
-         * @return Flexible return value from I2C write function
+         * @return Zero for success, nonzero for error
         */
         uint8_t write(uint8_t addr, uint8_t reg, uint8_t * data, uint32_t len);
 
@@ -76,7 +76,7 @@ class I2C
          * @param reg The uint16_t register value to write
          * @param data Data buffer from which data is written
          * @param len Length of data to write from buffer
-         * @return Flexible return value from I2C write function
+         * @return Zero for success, nonzero for error
         */
         uint8_t write(uint8_t addr, uint16_t reg, uint8_t * data, uint32_t len);
 
@@ -85,7 +85,7 @@ class I2C
          * @param addr Target I2C address
          * @param data Data buffer into which to read
          * @param len Length of data to read
-         * @return Flexible return value from I2C read function
+         * @return Zero for success, nonzero for error
         */
         uint8_t read(uint8_t addr, uint8_t * data, uint32_t len);
 
@@ -103,7 +103,7 @@ class I2C
          * @param wr_len Length of data to write
          * @param r_data Data buffer into which to read
          * @param r_len Length of data to read
-         * @return Flexible return value from I2C writeRead function
+         * @return Zero for success, nonzero for error
         */
         uint8_t writeRead(uint8_t addr, uint8_t * wr_data, uint32_t wr_len, uint8_t * r_data, uint32_t r_len);
 
@@ -112,7 +112,7 @@ class I2C
          * @param addr Target I2C address
          * @param reg Register to access
          * @param data Data buffer into which to read
-         * @return Flexible return value from I2C writeRead function
+         * @return Zero for success, nonzero for error
         */
         uint8_t writeRead(uint8_t addr, uint8_t reg, uint8_t * data);
 
@@ -122,9 +122,10 @@ class I2C
          * @param reg Register to access (uint8_t)
          * @param data Data buffer into which to read
          * @param len Length of data to read
-         * @return Flexible return value from I2C writeRead function
+         * @param stopbit Default/False: repeated start, True: stop, restart
+         * @return Zero for success, nonzero for error
         */
-        uint8_t writeRead(uint8_t addr, uint8_t reg, uint8_t * data, uint32_t len);
+        uint8_t writeRead(uint8_t addr, uint8_t reg, uint8_t * data, uint32_t len, bool stopbit=false);
 
         /**
          * @brief Write two I2C bytes followed by a repeated start N byte I2C read
@@ -132,7 +133,7 @@ class I2C
          * @param reg Register to access (uint16_t)
          * @param data Data buffer into which to read
          * @param len Length of data to read
-         * @return Flexible return value from I2C writeRead function
+         * @return Zero for success, nonzero for error
         */
         uint8_t writeRead(uint8_t addr, uint16_t reg, uint8_t * data, uint32_t len);
 
@@ -144,6 +145,7 @@ class I2C
 
     private:
         uint8_t _i2c_channel;
+        uint8_t _i2c_error;
         bool    _i2c_busy;
 };
 
