@@ -78,6 +78,8 @@ void initVariant() __attribute__((weak));
 void initVariant() {}
 
 // Function prototypes
+void initFramework();
+void yieldToTasks();
 bool extractTime(const char *str);
 bool extractDate(const char *str);
 void printInteger(int val, char delim);
@@ -89,15 +91,7 @@ void getTimeFromCompiler();
 
 int main()
 {
-    // Framework initialization
-    init();
-    __libc_init_array();
-    initVariant();
-
-#if defined(USBCON)
-    USBDevice.init();
-    USBDevice.attach();
-#endif
+    initFramework();
 
     // Bus initialization
     serial_bus.init(SERIAL_BAUDRATE);
@@ -234,15 +228,33 @@ int main()
         // serial_bus.printf("Testing serial... Value = %d.\r\n", val);
         // timer.start();
 
-        // Yield to framework USB background task
-        yield();
-        if (serialEventRun)
-        {
-            serialEventRun();
-        }
+        yieldToTasks();
     }
 
     return 0;
+}
+
+// Initialize framework
+void initFramework()
+{
+    init();
+    __libc_init_array();
+    initVariant();
+
+#if defined(USBCON)
+    USBDevice.init();
+    USBDevice.attach();
+#endif
+}
+
+// Yield to framework USB background task
+void yieldToTasks()
+{
+    yield();
+    if (serialEventRun)
+    {
+        serialEventRun();
+    }
 }
 
 // Convert time string to integer values
