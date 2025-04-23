@@ -29,7 +29,7 @@ This project may be built using PlatformIO with supporting configuration files a
 
 ## Schematic
 
-The overall schematic for the test setup and associated CAD files are included as composed in [KiCad 8](https://www.kicad.org/blog/2024/03/KiCad-8.0.1-Release/).
+The overall schematic for the test setup and associated CAD files are included for [KiCad 9](https://www.kicad.org/).
 
 ![Demo Drivers Schematic](images/demo-drivers-schematic.png)
 
