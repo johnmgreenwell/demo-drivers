@@ -4,7 +4,7 @@ Custom HAL drivers implementation demo
 
 ## Overview
 
-This test project demonstrates the use of custom drivers written for a flexible HAL layer. The [Seeeduino Xiao microcontroller](https://wiki.seeedstudio.com/Seeeduino-XIAO/) is used as an example platform, while the drivers/devices under test (DUT) are:
+This test project demonstrates the use of custom drivers written for a flexible hardware abstraction layer (HAL). The [Seeeduino Xiao microcontroller](https://wiki.seeedstudio.com/Seeeduino-XIAO/) is used as an example platform, while the drivers/devices under test (DUT) are:
 
 * [LED](https://github.com/johnmgreenwell/led)
 * [Switch](https://github.com/johnmgreenwell/switch)
@@ -17,7 +17,7 @@ This test project demonstrates the use of custom drivers written for a flexible 
 * [GPIO expander (SPI)](https://github.com/johnmgreenwell/mcp23s08)
 * [Shift register](https://github.com/johnmgreenwell/shift-register)
 
-Each of the drivers is tested by direct interface or as a subset of another driver. The tests are not exhaustive for each driver, as it is sufficient to demonstrate a practical application of each.
+Each of the drivers is tested by direct interface or as a subset of another driver. Note that for the purposes of this project the tests are not exhaustive, but are intended to demonstrate practical applications implemented with the custom HAL.
 
 ![Demo Drivers Breadboard Photo](images/demo-drivers-breadboard.jpg)
 
